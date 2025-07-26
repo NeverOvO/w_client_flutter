@@ -64,7 +64,7 @@ class WClientFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
         }
 
         // 检查App是否安装
-        val targetPackage = "cn.cyberIdentity.certification"
+        val targetPackage = "cn.cyberIdentity.certification"//国家网络身份认证APP包名
         if (!isAppInstalled(targetPackage)) {
           // 未安装，打开下载页
           openDownloadPage()

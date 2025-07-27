@@ -1,3 +1,5 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* 2025.07.26
+首次提交，基于SDK 1.5.2版本，iOS端采用源码直接引用，Android需要用户自行引入AAR包体。
+

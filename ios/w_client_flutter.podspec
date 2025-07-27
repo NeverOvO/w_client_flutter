@@ -4,12 +4,12 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'w_client_flutter'
-  s.version          = '0.0.1'
+  s.version          = '1.0.0'
   s.summary          = '国家网络身份认证Flutter-NeverOuO'
   s.description      = <<-DESC
 国家网络身份认证Flutter
                        DESC
-  s.homepage         = 'https://github.com/NeverOvO'
+  s.homepage         = 'https://github.com/NeverOvO/w_client_flutter'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'NeverOuO' => '1019832705@qq.com' }
   s.source           = { :path => '.' }

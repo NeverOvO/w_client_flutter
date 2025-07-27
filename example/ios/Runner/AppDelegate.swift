@@ -14,7 +14,7 @@ import UIKit
   //手动添加
   override func application(_ app: UIApplication,open url: URL,options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     //scheme（必须与 Info.plist 中的 uLink字段一致）
-    if url.scheme == "nbyys" {
+    if url.scheme == "uLink字段一致" {
         // 通过通知转发给插件监听者
         NotificationCenter.default.post(name: Notification.Name("WClientAuthResultCallback"),object: url,)
         return true

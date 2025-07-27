@@ -139,6 +139,12 @@ https://cdnrefresh.ctdidcii.cn/w1/WHClient_H5/Install/UL.html
 
 此为网络身份认证官方下载地址
 
+#### Android sdk 打release包无法拉起，如何配置混淆？
+```
+-keep class cn.wh.**（*；｝
+-keep class com.fort.andJni.**(*;}
+```
+
 # 赞助投喂
 
  <img src="https://github.com/NeverOvO/NeverOvO/blob/main/alipay-2025.JPG" width="250" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/wepay-2025.JPG" width="250" />

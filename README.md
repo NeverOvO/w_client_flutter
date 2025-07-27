@@ -139,12 +139,11 @@ https://cdnrefresh.ctdidcii.cn/w1/WHClient_H5/Install/UL.html
 
 此为网络身份认证官方下载地址
 
-# 赞助
+# 赞助投喂
 
- <img src="https://github.com/NeverOvO/NeverOvO/blob/main/alipay-2025.JPG" width="250" /> <img src="https://github.com/NeverOvO/NeverOvO/blob/main/wepay-2025.JPG" width="250" />
-
- <img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-bnb.JPG" width="250" /> <img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-tron.JPG" width="250" />
-
+ <img src="https://github.com/NeverOvO/NeverOvO/blob/main/alipay-2025.JPG" width="250" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/wepay-2025.JPG" width="250" />
+ 
+ <img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-bnb.JPG" width="166" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-tron.JPG" width="166" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-okx.JPG" width="166" />
 
 
 

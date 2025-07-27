@@ -90,15 +90,16 @@ class WClientFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
 
           if (pendingResult != null) {
             // 如果上一次调用还没返回，先返回错误避免重复
-            result.error("ALREADY_RUNNING", "已有认证请求正在处理中", null)
+            result.success("已有认证请求正在处理中")
             return
           }
 
           pendingResult = result
           activity?.startActivityForResult(intent, requestCode)
         } catch (e: Exception) {
-          Log.e("WClientFlutterPlugin", "认证启动失败: ${e.localizedMessage}", e)
-          result.error("LAUNCH_ERROR", "认证启动失败: ${e.message}", null)
+          result.success("认证启动失败: ${e.message}")
+//          Log.e("WClientFlutterPlugin", "认证启动失败: ${e.localizedMessage}", e)
+//          result.error("LAUNCH_ERROR", "认证启动失败: ${e.message}", null)
         }
       }
 

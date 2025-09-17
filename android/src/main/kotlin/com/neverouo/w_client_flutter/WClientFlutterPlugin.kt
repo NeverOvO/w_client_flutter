@@ -16,7 +16,8 @@ class WClientFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
   ActivityAware, PluginRegistry.ActivityResultListener, EventChannel.StreamHandler {
 
   private lateinit var channel: MethodChannel
-  private lateinit var eventChannel: EventChannel
+//  private lateinit var eventChannel: EventChannel
+  private var eventChannel: EventChannel? = null
   private var eventSink: EventChannel.EventSink? = null
 
   private var activity: Activity? = null
@@ -26,11 +27,18 @@ class WClientFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
   override fun onAttachedToEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(binding.binaryMessenger, "w_client_flutter")
     channel.setMethodCallHandler(this)
+
+    // ✅ 初始化 eventChannel
+    eventChannel = EventChannel(binding.binaryMessenger, "w_client_flutter/events")
+    eventChannel?.setStreamHandler(this)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
-    eventChannel.setStreamHandler(null)
+    //    eventChannel.setStreamHandler(null)
+    // ✅ 安全释放 eventChannel
+    eventChannel?.setStreamHandler(null)
+    eventChannel = null
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {

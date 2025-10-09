@@ -21,7 +21,7 @@
   w_client_flutter:
     path: ../
 ```
-2:云端引入：待软著完成后进行补充
+2:云端引入：w_client_flutter:^
 
 ## 核心代码
 

@@ -21,7 +21,7 @@
   w_client_flutter:
     path: ../
 ```
-2:云端引入：w_client_flutter:^
+2:云端引入：w_client_flutter: ^1.0.0
 
 ## 核心代码
 

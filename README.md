@@ -41,7 +41,9 @@ bizSeq 由接入机构生成32位字母或数字，用于标识每笔业务的�
   String bizSeq = Uuid().v4().toString().replaceAll("-", "");
 ```
 orgID：填写机构ID
+
 appID：应用ID 例如 0003 iOS 0002 安卓
+
 type：0：网络身份认证凭证 ； 1：网络身份认证凭证+口令 ；1）当认证模式选择R01、R03时，type值为0 ；2）当认证模式选择R02、R04时，type值为1
 
 uLink：即在申请开通时填写的网页Url scheme 地址参数，这里我允许用户手动填写与自动获取，为保证业务可靠性，请在宿主APP的iOS项目Info.plist中添加如下代码

@@ -109,6 +109,17 @@ Url scheme 地址参数 请替换为与Info.plist中一致
   <package android:name= "cn.cyberIdentity.certification"/>
 </queries>
 ```
+例如：
+```
+...
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.CALL_PHONE"/>
+<queries>
+<package android:name= "cn.cyberIdentity.certification"/>
+</queries>
+<application
+...
+```
 用于查询国家网络身份认证APP是否安装
 
 #### cn.cyberIdentity.certification即国家网络身份认证APP包名

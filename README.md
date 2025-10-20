@@ -117,7 +117,7 @@ Url scheme 地址参数 请替换为与Info.plist中一致
 <uses-permission android:name="android.permission.VIBRATE" />
 <uses-permission android:name="android.permission.CALL_PHONE"/>
 <queries>
-<package android:name= "cn.cyberIdentity.certification"/>
+  <package android:name= "cn.cyberIdentity.certification"/>
 </queries>
 <application
 ...

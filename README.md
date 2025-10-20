@@ -127,13 +127,22 @@ Url scheme 地址参数 请替换为与Info.plist中一致
 在宿主APP的android项目中，Android根目录下添加libs文件夹，与app文件夹同级，引入w_auth-release.aar包
 具体包体可以导入example/android/libs下的w_auth-release.aar包
 
-在宿主Android项目的 app/build.gradle 中最下方添加代码，引入该aar包，代码写法为kt风格，java请自行修改
+注：libs目录与app目录同级，或处于app目录下级均可，推荐同级。
+
+在宿主Android项目的 app/build.gradle 中最下方添加代码，引入该aar包
 ```
+//Kotlin写法
 dependencies {
     implementation(fileTree("libs") {
         include("*.aar")
     })
 }
+
+//Groovy写法
+dependencies {
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+}
+
 ```
 此处为简略写法，全部引入，忽略名称
 

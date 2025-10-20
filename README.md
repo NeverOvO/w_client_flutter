@@ -63,7 +63,24 @@ uLink：即在申请开通时填写的网页Url scheme 地址参数，这里我�
 </array>
 ```
 
-Url scheme 地址参数 请替换为申请时地址
+Url scheme 地址参数 请替换为申请时地址，例如申请时为 nbexample://,则替换为 nbexample 即可
+
+即如下：
+```
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLName</key>
+    <string>uLink</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>nbexample</string>
+    </array>
+  </dict>
+</array>
+```
 
 ### 参数返回
 

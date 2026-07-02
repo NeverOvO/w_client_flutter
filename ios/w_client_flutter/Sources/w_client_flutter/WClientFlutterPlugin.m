@@ -4,7 +4,7 @@
 
 static FlutterEventSink _eventSink; // 保存 event sink 用于后续发送事件
 
-@interface WClientFlutterPlugin()<FlutterStreamHandler>
+@interface WClientFlutterPlugin()<FlutterStreamHandler, FlutterSceneLifeCycleDelegate>
 
 @property(nonatomic, strong) FlutterResult pendingResult;
 @property(nonatomic, strong) NSTimer *authTimeoutTimer;
@@ -45,6 +45,18 @@ static FlutterEventSink _eventSink; // 保存 event sink 用于后续发送事�
 
     [self handleAuthCallbackURL:url];
     return YES;
+}
+
+- (BOOL)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts API_AVAILABLE(ios(13.0)) {
+    for (UIOpenURLContext *context in URLContexts) {
+        NSURL *url = context.URL;
+        if ([self isAuthCallbackURL:url]) {
+            [self handleAuthCallbackURL:url];
+            return YES;
+        }
+    }
+
+    return NO;
 }
 
 - (BOOL)isAuthCallbackURL:(NSURL *)url {

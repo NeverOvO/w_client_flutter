@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'w_client_flutter'
-  s.version          = '2.0.0'
+  s.version          = '2.1.0'
   s.summary          = '国家网络身份认证Flutter-NeverOuO'
   s.description      = <<-DESC
 国家网络身份认证Flutter

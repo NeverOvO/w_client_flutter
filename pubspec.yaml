@@ -1,6 +1,6 @@
 name: w_client_flutter
 description: "国家网络身份认证Flutter"
-version: 2.0.0
+version: 2.1.0
 homepage: https://github.com/NeverOvO/w_client_flutter
 
 environment:

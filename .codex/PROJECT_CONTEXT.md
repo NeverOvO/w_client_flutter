@@ -14,6 +14,7 @@
 * CocoaPods 和 SwiftPM 应引用同一份 iOS 源码，避免重复源码副本。
 * `PrivacyInfo.xcprivacy` 位于 SwiftPM target 目录，并需要同时在 SwiftPM 和 podspec 中声明。
 * iOS 认证回跳由 `WClientFlutterPlugin` 注册 application delegate 处理，匹配 `CFBundleURLName = uLink` 的 URL scheme 后消费回调，避免 Flutter 将回跳 URL 当成页面路由。
+* iOS 插件同时实现 `FlutterSceneLifeCycleDelegate` 的 `scene:openURLContexts:`，用于支持 UIScene 生命周期下的 URL 回调。
 * example iOS 工程使用 SwiftPM 集成插件，不再保留 CocoaPods App 集成；插件自身仍保留 podspec 供宿主 CocoaPods 使用。
 * example iOS 工程已按 Flutter 3.44.4 模板补充 `SceneDelegate.swift` 和 `UIApplicationSceneManifest`。
 * `WClientFlutter.getAuthResult` 统一返回 `Map<String, dynamic>`，业务失败也通过 `resultCode` 和 `resultDesc` 返回。
@@ -29,7 +30,7 @@
 * `dart analyze` 当前无问题。
 * `example` 可执行 `flutter test`。
 * `example` 可执行 `flutter build apk --debug`。
-* `flutter pub publish --dry-run` 可识别发布版本 2.0.0；当前剩余 warning 来自 Git 工作区未提交和旧文件删除待提交。
+* 当前发布版本为 2.1.0；2.1.0 单独记录 iOS 插件 UIScene URL 回调支持。
 
 ## 已知环境问题
 

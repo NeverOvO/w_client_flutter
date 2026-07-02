@@ -16,7 +16,7 @@
   w_client_flutter:
     path: ../
 ```
-2:云端引入：w_client_flutter: ^2.0.0
+2:云端引入：w_client_flutter: ^2.1.0
 
 ## 核心代码
 
@@ -235,5 +235,4 @@ https://cdnrefresh.ctdidcii.cn/w1/WHClient_H5/Install/UL.html
  <img src="https://github.com/NeverOvO/NeverOvO/blob/main/alipay-2025.JPG" width="250" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/wepay-2025.JPG" width="250" />
  
  <img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-bnb.JPG" width="166" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-tron.JPG" width="166" /><img src="https://github.com/NeverOvO/NeverOvO/blob/main/okx-usdt-okx.JPG" width="166" />
-
 

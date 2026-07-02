@@ -1,3 +1,8 @@
+## 2.1.0
+
+* 新增 iOS 插件 UIScene URL 回调支持，适配 Flutter 新生命周期要求。
+* 保留原有 AppDelegate URL 回调兼容逻辑，不影响旧版宿主项目接入。
+
 ## 2.0.0
 
 * 新增 iOS Swift Package Manager 支持，同时保留 CocoaPods 集成能力。

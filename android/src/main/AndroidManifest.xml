@@ -1,3 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.neverouo.w_client_flutter">
+  <queries>
+    <package android:name="cn.cyberIdentity.certification" />
+  </queries>
 </manifest>

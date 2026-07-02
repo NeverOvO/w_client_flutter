@@ -1,6 +1,6 @@
 name: w_client_flutter
 description: "国家网络身份认证Flutter"
-version: 1.0.0
+version: 2.0.0
 homepage: https://github.com/NeverOvO/w_client_flutter
 
 environment:
@@ -15,7 +15,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

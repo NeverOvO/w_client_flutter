@@ -20,6 +20,14 @@
 
 // 2 调用网络身份认证App获取认证数据
 - (NSDictionary *)getAuthResult:(NSDictionary *)parameters {
+    return [self getAuthResult:parameters completion:nil];
+}
+
+- (NSDictionary *)getAuthResult:(NSDictionary *)parameters completion:(void (^)(NSDictionary *result))completion {
+    if (![parameters isKindOfClass:[NSDictionary class]]) {
+        return @{@"resultCode": @"C0405001", @"resultDesc": @"参数不能为空"};
+    }
+
     NSMutableDictionary *localParameter = [NSMutableDictionary dictionaryWithDictionary:parameters];
     NSMutableDictionary *result = [NSMutableDictionary new];
     if (localParameter[@"miniProgramID"] != NULL && ![localParameter[@"miniProgramID"] isEqual: @""]) {
@@ -42,8 +50,18 @@
     localParameter[@"packageName"] = packageName;
 
     NSString *urlStr = [self convertToUniversalLinksFrom:localParameter];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    if (!url) {
+        result[@"resultCode"] = @"C0405001";
+        result[@"resultDesc"] = @"数据处理异常";
+        return result;
+    }
 
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr] options:@{} completionHandler:^(BOOL success) {}];
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+        if (!success && completion) {
+            completion(@{@"resultCode": @"C0412001", @"resultDesc": @"认证启动失败"});
+        }
+    }];
     result[@"resultCode"] = @"C0000000";
     result[@"resultDesc"] = @"成功";
     return result;
@@ -55,7 +73,7 @@
     NSArray *arr = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleURLTypes"];
     for (int i = 0; i < arr.count; i++) {
         NSString *key = arr[i][@"CFBundleURLName"];
-        if ([key isEqualToString:@"cyberidentity"]) {
+        if ([key isEqualToString:@"uLink"] || [key isEqualToString:@"cyberidentity"]) {
             NSArray *schemes = arr[i][@"CFBundleURLSchemes"];
             if (schemes.count > 0) {
                 urlSchemeStr = schemes[0];
@@ -69,11 +87,12 @@
 // 拼接URL
 -(NSString *)convertToUniversalLinksFrom:(NSDictionary *)parameter  {
     NSString *urlString = @"https://cdnrefresh.ctdidcii.cn/ulink";
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"&%"] invertedSet];
+    NSMutableCharacterSet *cs = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
+    [cs removeCharactersInString:@"!*'();:@&=+$,/?%#[]"];
     BOOL isFirst = YES;
     for (NSString *key in parameter) {
-        NSString *encodingKey = [key stringByAddingPercentEncodingWithAllowedCharacters:cs];
-        NSString *encodingValue = [parameter[key] stringByAddingPercentEncodingWithAllowedCharacters:cs];
+        NSString *encodingKey = [[key description] stringByAddingPercentEncodingWithAllowedCharacters:cs];
+        NSString *encodingValue = [[parameter[key] description] stringByAddingPercentEncodingWithAllowedCharacters:cs];
         if (isFirst) {
             isFirst = NO;
             urlString = [NSString stringWithFormat:@"%@?%@=%@", urlString, encodingKey, encodingValue];
@@ -81,7 +100,7 @@
             urlString = [NSString stringWithFormat:@"%@&%@=%@", urlString, encodingKey, encodingValue];
         }
     };
-    return [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    return urlString;
 }
 
 @end

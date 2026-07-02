@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       // 'uLink' :'uLink', // iOS项目，可不填，自动从Info.plist中的CFBundleURLName为uLink项获取
     });
 
-    print('认证返回：$authResult');
+    debugPrint('认证返回：$authResult');
     setState(() {
       paramsStr = authResult.toString();
     });

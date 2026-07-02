@@ -1,0 +1,15 @@
+AGENTS.md
+.codex/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea/
+.DS_Store
+build/
+example/.dart_tool/
+example/.flutter-plugins
+example/.flutter-plugins-dependencies
+example/build/
+example/ios/Flutter/ephemeral/
+example/ios/Pods/
+example/ios/.symlinks/
